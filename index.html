@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>اكتشفي مجالك التقني</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- الخلفية -->
+
+    <div class="background-shape shape1"></div>
+
+    <div class="background-shape shape2"></div>
+<title>اكتشفي مجالك التقني</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- الخلفية -->
+<div class="background-shape shape1"></div>
+<div class="background-shape shape2"></div>
+
+<!-- الصفحة الرئيسية -->
+<section id="homePage" class="page active">
+
+    <div class="navbar">
+        <div class="logo-area">
+           <div class="logo-box">
+    <img src="C:\Users\benos\Desktop\شعار النادي.jpg" alt="شعار نادي الهندسة والحاسبات">
+</div>
+            <div>
+                <span>نادي الهندسة والحاسبات</span>
+                <small>جامعة أم القرى</small>
+            </div>
+        </div>
+    </div>
+
+    <main class="home-container">
+
+        <div class="home-content">
+
+            <div class="tag">
+                ✦ اختبار الميول التقنية
+            </div>
+
+            <h1>
+                اكتشفي
+                <span>مجالك التقني</span>
+            </h1>
+
+            <p>
+                هل تتساءلين أي تخصص من تخصصات الحاسب
+                يناسب اهتماماتك وشخصيتك؟
+            </p>
+
+            <p class="small-description">
+                أجيبي عن مجموعة من الأسئلة القصيرة،
+                وفي النهاية سنساعدك على اكتشاف المجال
+                الأقرب إلى ميولك.
+            </p>
+
+            <button class="main-button" onclick="startQuiz()">
+                ابدئي الاختبار
+                <span>←</span>
+            </button>
+
+            <div class="quiz-info">
+                <div>
+                    <strong>12</strong>
+                    <span>سؤال</span>
+                </div>
+
+                <div>
+                    <strong>8</strong>
+                    <span>مجالات</span>
+                </div>
+
+                <div>
+                    <strong>3-5</strong>
+                    <span>دقائق</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="home-visual">
+
+            <div class="tech-card card-one">
+                <span>💻</span>
+                <p>علوم الحاسب</p>
+            </div>
+
+            <div class="tech-card card-two">
+                <span>🔐</span>
+                <p>الأمن السيبراني</p>
+            </div>
+
+            <div class="tech-card card-three">
+                <span>🤖</span>
+                <p>الذكاء الاصطناعي</p>
+            </div>
+
+            <div class="main-circle">
+                <div class="circle-icon">⌘</div>
+                <span>Future</span>
+                <strong>Tech</strong>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        نادي الهندسة والحاسبات © جامعة أم القرى
+    </footer>
+
+</section>
+
+
+<!-- صفحة الاختبار -->
+<section id="quizPage" class="page">
+
+    <div class="quiz-wrapper">
+
+        <div class="quiz-header">
+
+            <button class="back-button" onclick="goHome()">
+                → العودة
+            </button>
+
+            <div class="logo-box">
+    <img src="C:\Users\benos\Desktop\شعار النادي.jpg" alt="شعار نادي الهندسة والحاسبات">
+</div>
+
+        </div>
+
+
+        <div class="progress-section">
+
+            <div class="progress-info">
+                <span id="questionNumber">السؤال 1 من 12</span>
+                <span id="progressPercent">8%</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+
+        </div>
+
+
+        <div class="question-container">
+
+            <div class="question-icon">
+                1
+            </div>
+
+            <h2 id="questionText">
+                السؤال
+            </h2>
+
+            <p class="question-hint">
+                اختاري الإجابة الأقرب لك
+            </p>
+
+            <div id="answersContainer" class="answers-container">
+                <!-- الإجابات تظهر هنا -->
+            </div>
+
+            <button id="nextButton" class="next-button" onclick="nextQuestion()" disabled>
+                التالي
+                <span>←</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- صفحة النتيجة -->
+<section id="resultPage" class="page">
+
+    <div class="result-wrapper">
+
+        <div class="result-top">
+              <div class="logo-box">
+    <img src="C:\Users\benos\Desktop\شعار النادي.jpg" alt="شعار نادي الهندسة والحاسبات">
+</div>
+            <button class="back-button" onclick="goHome()">
+                إعادة الاختبار
+            </button>
+        </div>
+
+        <div class="result-content">
+
+            <div class="result-badge">
+                ✦ النتيجة
+            </div>
+
+            <h1>
+                المجال الأقرب إلى ميولك هو
+            </h1>
+
+            <div id="resultIcon" class="result-icon">
+                💻
+            </div>
+
+            <h2 id="resultTitle">
+                علوم الحاسب
+            </h2>
+
+            <p id="resultDescription" class="result-description">
+                وصف المجال
+            </p>
+
+
+            <div class="result-grid">
+
+                <div class="result-box">
+                    <h3>💡 لماذا يناسبك؟</h3>
+                    <p id="resultWhy"></p>
+                </div>
+
+                <div class="result-box">
+                    <h3>🧠 مهارات مهمة</h3>
+                    <p id="resultSkills"></p>
+                </div>
+
+                <div class="result-box">
+                    <h3>🚀 مجالات العمل</h3>
+                    <p id="resultJobs"></p>
+                </div>
+
+            </div>
+
+
+            <div class="result-note">
+                <span>💬</span>
+                <p>
+                    هذه النتيجة تعكس المجال الأقرب إلى إجاباتك وميولك
+                    في هذا الاختبار، وليست حكمًا نهائيًا على التخصص المناسب لك.
+                </p>
+            </div>
+
+
+            <div class="result-buttons">
+
+                <button class="main-button" onclick="restartQuiz()">
+                    إعادة الاختبار
+                </button>
+
+                <button class="secondary-button" onclick="showAllFields()">
+                    اكتشفي باقي المجالات
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- المجالات -->
+<section id="fieldsPage" class="page">
+
+    <div class="fields-wrapper">
+
+        <div class="result-top">
+
+              <div class="logo-box">
+    <img src="C:\Users\benos\Desktop\شعار النادي.jpg" alt="شعار نادي الهندسة والحاسبات">
+</div>
+
+            <button class="back-button" onclick="showPage('resultPage')">
+                → العودة للنتيجة
+            </button>
+
+        </div>
+
+        <div class="fields-content">
+
+            <div class="result-badge">
+                ✦ مجالات الحاسب
+            </div>
+
+            <h1>اكتشفي مجالات التقنية</h1>
+
+            <p>
+                عالم التقنية واسع، ولكل مجال طبيعة ومهارات مختلفة.
+            </p>
+
+            <div id="fieldsGrid" class="fields-grid">
+                <!-- المجالات تظهر بالجافاسكربت -->
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>

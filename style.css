@@ -1,0 +1,204 @@
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+:root { --primary: #087f7b; --primary-dark: #055f5d; --primary-light: #dff5f3; --dark: #102a2a; --text: #304848; --gray: #718080; --white: #ffffff; --background: #f6fbfa; --border: #dcebea; }
+body { font-family: "Cairo", sans-serif; background: var(--background); color: var(--dark); min-height: 100vh; overflow-x: hidden; }
+button { font-family: inherit; cursor: pointer; }
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
+/* ========================= الخلفية ========================= */
+.background-shape { position: fixed; border-radius: 50%; z-index: -1; opacity: 0.5; }
+.shape1 { width: 450px; height: 450px; background: #e2f5f3; top: -200px; right: -150px; }
+.shape2 { width: 350px; height: 350px; background: #eaf8f7; bottom: -150px; left: -150px; }
+/* ========================= Navbar ========================= */
+.navbar { width: 100%; padding: 25px 7%; }
+.logo-area { display: flex; align-items: center; gap: 12px; }
+.logo-box, .quiz-logo { width: 45px; height: 45px; border-radius: 12px; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 17px; }
+.logo-area span { display: block; font-weight: 700; }
+.logo-area small { display: block; color: var(--gray); font-size: 11px; }
+/* ========================= الصفحة الرئيسية ========================= */
+.home-container { max-width: 1200px; margin: 50px auto; padding: 0 30px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 80px;
+}
+.home-content { flex: 1; }
+.tag, .result-badge { display: inline-block; background: var(--primary-light); color: var(--primary-dark); padding: 8px 15px; border-radius: 30px; font-size: 13px; font-weight: 700; margin-bottom: 20px; }
+.home-content h1 { font-size: clamp(45px, 6vw, 72px); line-height: 1.15; margin-bottom: 25px; }
+.home-content h1 span { display: block; color: var(--primary); }
+.home-content > p { max-width: 580px; font-size: 20px; line-height: 2; color: var(--text); }
+.small-description { font-size: 15px !important; color: var(--gray) !important; margin-top: 5px; }
+.main-button { border: none; background: var(--primary); color: white; padding: 15px 27px; border-radius: 12px; font-size: 16px; font-weight: 700; margin-top: 25px; transition: 0.3s; }
+.main-button:hover { background: var(--primary-dark); transform: translateY(-2px); }
+.main-button span { margin-right: 10px; }
+.quiz-info { display: flex; gap: 45px; margin-top: 35px; }
+.quiz-info div { display: flex; flex-direction: column; }
+.quiz-info strong { font-size: 23px; color: var(--primary); }
+.quiz-info span { color: var(--gray); font-size: 12px; }
+/* ========================= الرسم التقني ========================= */
+.home-visual { width: 430px; height: 430px; position: relative; display: flex; align-items: center; justify-content: center; }
+.main-circle { width: 270px; height: 270px; border-radius: 50%; background: white; border: 15px solid var(--primary-light); box-shadow: 0 20px 50px rgba(0, 90, 90, 0.12);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.circle-icon { width: 70px; height: 70px; border-radius: 20px; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 35px; margin-bottom: 15px; }
+.main-circle span { color: var(--gray); font-size: 14px; }
+.main-circle strong { color: var(--primary); font-size: 30px; }
+.tech-card { position: absolute; background: white; padding: 15px 20px; border-radius: 15px; box-shadow: 0 12px 30px rgba(0, 70, 70, 0.1);
+display: flex;
+align-items: center;
+gap: 10px;
+
+font-weight: 700;
+font-size: 13px;
+}
+.tech-card span { font-size: 24px; }
+.card-one { top: 35px; right: 10px; }
+.card-two { bottom: 55px; right: 0; }
+.card-three { left: 0; top: 170px; }
+/* ========================= Footer ========================= */
+footer { text-align: center; color: var(--gray); font-size: 12px; margin-top: 40px; padding-bottom: 20px; }
+
+/* ========================= صفحة الاختبار ========================= */
+.quiz-wrapper, .result-wrapper, .fields-wrapper { max-width: 900px; margin: auto; padding: 30px; }
+.quiz-header, .result-top { display: flex; justify-content: space-between; align-items: center; }
+.back-button { border: none; background: transparent; color: var(--gray); font-size: 14px; font-weight: 600; }
+.progress-section { margin-top: 50px; }
+.progress-info { display: flex; justify-content: space-between; color: var(--gray); font-size: 13px; margin-bottom: 10px; }
+.progress-bar { width: 100%; height: 8px; background: #e2eeee; border-radius: 20px; overflow: hidden; }
+.progress { height: 100%; width: 0; background: var(--primary); transition: 0.4s; }
+.question-container { background: white; padding: 45px; border-radius: 25px; box-shadow: 0 15px 50px rgba(0, 70, 70, 0.07); margin-top: 40px; }
+.question-icon { width: 50px; height: 50px; border-radius: 15px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 23px; font-weight: 800; }
+.question-container h2 { font-size: 28px; margin-top: 25px; }
+.question-hint { color: var(--gray); font-size: 13px; margin-top: 5px; }
+.answers-container { display: grid; gap: 13px; margin-top: 30px; }
+.answer { width: 100%; border: 2px solid var(--border); background: white; border-radius: 14px; padding: 17px 20px; text-align: right; font-size: 15px; transition: 0.2s;
+display: flex;
+align-items: center;
+gap: 15px;
+}
+.answer:hover { border-color: var(--primary); background: #f8fdfc; }
+.answer.selected { border-color: var(--primary); background: var(--primary-light); }
+.answer-number { width: 32px; height: 32px; min-width: 32px; border-radius: 9px; background: #edf5f4; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 700; }
+.answer.selected .answer-number { background: var(--primary); color: white; }
+.next-button { width: 100%; border: none; background: var(--primary); color: white; padding: 16px; border-radius: 12px; margin-top: 25px; font-size: 16px; font-weight: 700; opacity: 0.4; }
+.next-button:not(:disabled) { opacity: 1; }
+.next-button span { margin-right: 10px; }
+/* ========================= النتيجة ========================= */
+.result-content { text-align: center; margin-top: 55px; }
+.result-content h1 { font-size: 25px; }
+.result-icon { width: 100px; height: 100px; border-radius: 30px; background: var(--primary-light); display: flex; align-items: center; justify-content: center; font-size: 48px; margin: 25px auto 15px; }
+.result-content h2 { color: var(--primary); font-size: 38px; }
+.result-description { max-width: 650px; margin: 10px auto; line-height: 2; color: var(--gray); }
+.result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 35px; text-align: right; }
+.result-box { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 22px; }
+.result-box h3 { font-size: 15px; margin-bottom: 12px; }
+.result-box p { color: var(--gray); font-size: 13px; line-height: 2; }
+.result-note { display: flex; gap: 12px; background: #fffdf1; border: 1px solid #f1e9b7; padding: 15px; border-radius: 15px; text-align: right; margin-top: 20px; font-size: 12px; color: #716c4c; }
+.result-buttons { margin-top: 25px; }
+.secondary-button { border: 2px solid var(--primary); color: var(--primary); background: white; padding: 13px 25px; border-radius: 12px; font-weight: 700; margin-right: 10px; }
+/* ========================= المجالات ========================= */
+.fields-content { text-align: center; margin-top: 50px; }
+.fields-content h1 { font-size: 35px; }
+.fields-content > p { color: var(--gray); margin-top: 8px; }
+.fields-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 35px; }
+.field-card { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 25px; text-align: right; transition: 0.3s; }
+.field-card:hover { transform: translateY(-4px); border-color: var(--primary); }
+.field-icon { font-size: 35px; margin-bottom: 12px; }
+.field-card h3 { color: var(--primary); margin-bottom: 7px; }
+.field-card p { color: var(--gray); font-size: 13px; line-height: 1.9; }
+/* ========================= Responsive ========================= */
+@media (max-width: 850px) {
+.home-container {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.home-content > p {
+    margin: auto;
+}
+
+.quiz-info {
+    justify-content: center;
+}
+
+.home-visual {
+    transform: scale(0.8);
+    margin-top: -30px;
+}
+
+.result-grid {
+    grid-template-columns: 1fr;
+}
+}
+@media (max-width: 600px) {
+.navbar {
+    padding: 20px;
+}
+
+.home-container {
+    padding: 0 20px;
+}
+
+.home-content h1 {
+    font-size: 43px;
+}
+
+.home-content > p {
+    font-size: 16px;
+}
+
+.home-visual {
+    width: 340px;
+    height: 340px;
+    transform: scale(0.7);
+    margin: -50px 0;
+}
+
+.question-container {
+    padding: 25px 18px;
+}
+
+.question-container h2 {
+    font-size: 22px;
+}
+
+.quiz-wrapper,
+.result-wrapper,
+.fields-wrapper {
+    padding: 20px;
+}
+
+.result-content h2 {
+    font-size: 30px;
+}
+
+.fields-grid {
+    grid-template-columns: 1fr;
+}
+
+.secondary-button {
+    margin: 10px 0 0;
+    width: 100%;
+}
+
+.result-buttons .main-button {
+    width: 100%;
+}
+}
+.logo-box img,
+.quiz-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.logo-box,
+.quiz-logo {
+    overflow: hidden;
+    background: white;
+}
